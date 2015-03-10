@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:body>
+
+    <ul>
+        <ui:repeat value="#{categoryRepository.findAll()}" var="category">
+            <li>
+                <h:link outcome="category.xhtml" value="#{category.name}">
+                    <f:param name="categoryId" value="#{category.id}"/>
+                </h:link>
+            </li>
+        </ui:repeat>
+    </ul>
+
+</h:body>
+</html>
